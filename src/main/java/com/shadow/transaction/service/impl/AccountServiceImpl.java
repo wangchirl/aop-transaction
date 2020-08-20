@@ -24,7 +24,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public int save(Account account) {
 		int res = accountMapper.save(account);
-//		res = 1/0;
+		res = 1/0;
 		return res;
 	}
 }

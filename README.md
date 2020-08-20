@@ -1,15 +1,18 @@
 1、aop - 事务
-	> setAutoCommit = false
+
+	> setAutoCommit = false	
 	> success = commit
 	> error = rollback
 
-2、TransactionProxyFactoryBean
+2、TransactionProxyFactoryBean - 事务中的（ProxyFactoryBean - AOP中的）
+
     - AbstractSingletonProxyFactoryBean    
        - FactoryBean
        - InitializingBean
     - 在 InitializingBean 的 回调方法中完成了代理对象的创建，即在初始化 TransactionProxyFactoryBean 的时候
     
 3、事务管理器 
+
     - PlatformTransactionManager
         - AbstractPlatformTransactionManager 
             - DataSourceTransactionManager - jdbc
@@ -23,4 +26,5 @@
     - rollback() => processRollback => doRollback()
     
 4、ReflectiveMethodInvocation => AOP中的重要组件
-   Map<MethodCacheKey, List<Object>> methodCache => 方法及通知的缓存：key-要执行的方法，value-Advisor集合 
+   
+   - Map<MethodCacheKey, List<Object>> methodCache => 方法及通知的缓存：key-要执行的方法，value-Advisor集合 
