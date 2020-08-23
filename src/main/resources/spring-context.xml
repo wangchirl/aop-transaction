@@ -35,11 +35,11 @@
     </bean>
 
 
-    <bean id="accountService" class="com.shadow.transaction.service.impl.AccountServiceImpl">
+    <bean id="accountService" class="com.shadow.transaction.xml.service.impl.AccountServiceImpl">
         <constructor-arg  ref="accountMapper" />
     </bean>
 
-    <bean id="accountMapper" class="com.shadow.transaction.mapper.AccountMapperImpl">
+    <bean id="accountMapper" class="com.shadow.transaction.xml.mapper.AccountMapperImpl">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
 
